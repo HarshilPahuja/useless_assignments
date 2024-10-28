@@ -47,7 +47,7 @@ class Complex
       friend Complex operator *(Complex c1,Complex c2);
       friend Complex operator /(Complex c1, Complex c2);
         };  
-        Complex operator * (Complex c1,Complex c2){
+        Complex operator * (Complex c1,Complex c2){    // we dont write class ka naam using that scope resolution operator to define the friend function outside the class cuz its not considered a part of class
        	Complex temp;
 		temp.real = c1.real * c2.real - c1.imag * c2.imag;
 		temp.imag = c1.real * c2.imag + c1.imag * c2.real; 
