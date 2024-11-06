@@ -3,12 +3,12 @@
 using namespace std;
 class Student
 {
-  private:
-    string name, blood, div, address, dob, phone;
-    int rno, Class, aad;
+
+    
 
   public:
-
+  string name, blood, div, address, dob, phone;
+    int rno, Class, aad;
     Student()
     {
       name = "harvey specter";
