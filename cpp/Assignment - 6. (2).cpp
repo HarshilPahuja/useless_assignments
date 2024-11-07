@@ -1,0 +1,53 @@
+//Anshul Kumaria - 02.
+// 1032233389.
+// Panel J1.
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int UCase = 0, Letter = 0, Digits = 0, Spaces = 0, Vowels = 0;
+void Check(char ch) {
+    if (ch >= 'A' && ch <= 'Z') 
+    {
+        UCase++;
+        Letter++;
+    } 
+    else if (ch >= 'a' && ch <= 'z')
+    {
+        Letter++;
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+        {
+            Vowels++;
+        }
+    } 
+    else if (ch >= '0' && ch <= '9') 
+    {
+        Digits++;
+    } else if (ch == ' ') 
+    {
+        Spaces++;
+    }
+}
+int main() 
+{
+    ifstream In("Book.txt");
+    ofstream Out("Copy.txt");
+    char ch;
+    while (In.get(ch))
+    {
+        Check(ch);
+        Out.put(ch);
+    }
+    Out << endl;  // Separate content from results
+    cout << "The number of Uppercase letters is " << UCase << endl;
+    cout << "The number of letters is " << Letter << endl;
+    cout << "The number of digits is " << Digits << endl;
+    cout << "The number of spaces is " << Spaces << endl;
+    cout << "The number of vowels is " << Vowels << endl;
+
+    In.close();
+    Out.close();
+
+    return 0;
+}
+
